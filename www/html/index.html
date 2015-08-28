@@ -1,0 +1,35 @@
+<!doctype html>
+ <html ng-app="ItemLister">
+  <head>
+  	<title>{{appName}}</title>
+  	<script src="..\js\node_modules\angular\angular.js"></script>
+    <script src = "..\js\index.js"></script>
+    <link rel="stylesheet" href="bootstrap\bootstrap\css\bootstrap.min.css"
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+  	<nav class="navbar navbar-inverse navbar-static-top">
+  		<div class="container-fluid">
+  			<div class="navbar-header">
+				<a class="navbar-brand" href="#">{{appName}}</a>  				
+   			</div>
+   			<div>
+   				<ul class="nav navbar-nav">
+   						<li ng-repeat="option in appOptions"><a href="/{{option}}">{{option}}</a></li>
+   				</ul>
+   			</div>
+  		</div>
+  	</nav>
+  	<div class="div" ng-repeat = "item in list">
+   		<div class="row">
+   			<div class ="col-sm-7">
+   				<div class="checkbox">
+   					<label><input type="checkbox"><strong>{{item.name}}</strong></label>
+   				</div>
+   			</div>
+   				<div class="col-sm-4"><p class="text-right">${{item.price}}</p></div>
+   			<div class="col-sm-12">{{item.info}}</div>
+   		</div>
+   	</div>
+  </body>
+</html>
