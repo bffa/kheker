@@ -1,5 +1,13 @@
 
-var app = angular.module('ItemLister',[]);
+var app = angular.module('ItemLister',['ngRoute']);
+
+app.congif(['$routeProvider', function($routeProvider){
+	$routeProvider
+	.when('/list',{
+		templateUrl:'html/list.html',
+		controller:'listController'
+	});
+}]);
 
 app.run(function ($rootScope){
 	$rootScope.lock = false;
